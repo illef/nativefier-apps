@@ -1,0 +1,1 @@
+makepkg --skipinteg -i
