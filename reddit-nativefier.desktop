@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=reddit
+Comment=reddit for desktop built with nativefier (electron)
+Exec=reddit-nativefier
+Icon=reddit-nativefier
+Encoding=UTF-8
+StartupWMClass=reddit-nativefier
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;

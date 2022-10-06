@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=keep
+Comment=keep for desktop built with nativefier (electron)
+Exec=keep-nativefier
+Icon=keep-nativefier
+Encoding=UTF-8
+StartupWMClass=keep-nativefier
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=calendar
+Comment=calendar for desktop built with nativefier (electron)
+Exec=calendar-nativefier
+Icon=calendar-nativefier
+Encoding=UTF-8
+StartupWMClass=calendar-nativefier
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;
