@@ -1,5 +1,5 @@
 pkgname=illef-nativefier-apps
-pkgver=20221006
+pkgver=20221011
 pkgrel=1
 pkgdesc="illef apps built with nativefier (electron)"
 arch=("i686" "x86_64")
@@ -33,7 +33,7 @@ _build() {
       --icon "${app_name}.png" \
       --maximize \
       --single-instance \
-      --user-agent safari \
+      --user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" \
       "${url}"
 }
 
