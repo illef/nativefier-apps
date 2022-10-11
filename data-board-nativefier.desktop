@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=data-board
+Comment=data-board for desktop built with nativefier (electron)
+Exec=data-board-nativefier
+Icon=data-board-nativefier
+Encoding=UTF-8
+StartupWMClass=data-board-nativefier
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;

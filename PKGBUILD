@@ -12,16 +12,19 @@ source=(
     "meet-nativefier.desktop"
     "calendar-nativefier.desktop"
     "reddit-nativefier.desktop"
+    "data-board-nativefier.desktop"
     "keep.png"
     "meet.png"
     "calendar.png"
     "reddit.png"
+    "data-board.png"
 )
 _app_list=(
     "keep;https://keep.google.com"
     "meet;https://meet.google.com"
     "calendar;https://calendar.google.com"
     "reddit;https://www.reddit.com"
+    "data-board;https://github.com/orgs/classtinginc/projects/43/views/1?filterQuery=assignee%3Aillef"
 )
 
 _build() {
