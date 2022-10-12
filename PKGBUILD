@@ -1,5 +1,5 @@
 pkgname=illef-nativefier-apps
-pkgver=20221011
+pkgver=20221012
 pkgrel=1
 pkgdesc="illef apps built with nativefier (electron)"
 arch=("i686" "x86_64")
@@ -13,6 +13,7 @@ source=(
     "calendar-nativefier.desktop"
     "reddit-nativefier.desktop"
     "data-board-nativefier.desktop"
+    "illef-nativefier.desktop"
     "keep.png"
     "meet.png"
     "calendar.png"
@@ -27,6 +28,10 @@ _app_list=(
     "data-board;https://github.com/orgs/classtinginc/projects/43/views/1?filterQuery=assignee%3Aillef"
 )
 
+_additional_desktops=(
+    "illef-nativefier.desktop"
+)
+
 _build() {
     app_name=$(echo "$1" | cut -d";" -f1)
     url=$(echo "$1" | cut -d";" -f2)
@@ -35,7 +40,6 @@ _build() {
       --name "${app_name}" \
       --icon "${app_name}.png" \
       --maximize \
-      --single-instance \
       --user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" \
       "${url}"
 }
@@ -69,5 +73,9 @@ _package() {
 package() {
     for app in "${_app_list[@]}"; do
         _package $app 
+    done
+
+    for desktop in "${_additional_desktops[@]}"; do
+        install -Dm644 "${srcdir}/${desktop}" "${pkgdir}/usr/share/applications/${desktop}"
     done
 }
