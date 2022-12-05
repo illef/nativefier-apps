@@ -23,6 +23,7 @@ _app_list=(
     "calendar"
     "reddit"
     "data-board"
+    "chatgpt"
 )
 
 

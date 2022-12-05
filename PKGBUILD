@@ -14,11 +14,13 @@ source=(
     "reddit-nativefier.desktop"
     "data-board-nativefier.desktop"
     "illef-nativefier.desktop"
+    "chatgpt-nativefier.desktop"
     "keep.png"
     "meet.png"
     "calendar.png"
     "reddit.png"
     "data-board.png"
+    "chatgpt.png"
 )
 _app_list=(
     "keep;https://keep.google.com"
@@ -26,6 +28,7 @@ _app_list=(
     "calendar;https://calendar.google.com"
     "reddit;https://www.reddit.com"
     "data-board;https://github.com/orgs/classtinginc/projects/43/views/1?filterQuery=assignee%3Aillef"
+    "chatgpt;https://chat.openai.com/chat"
 )
 
 _additional_desktops=(
@@ -40,7 +43,7 @@ _build() {
       --name "${app_name}" \
       --icon "${app_name}.png" \
       --maximize \
-      --user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" \
+      --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0" \
       "${url}"
 }
 

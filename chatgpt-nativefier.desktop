@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=chatgpt
+Comment=chatgpt for desktop built with nativefier (electron)
+Exec=chatgpt-nativefier
+Icon=chatgpt-nativefier
+Encoding=UTF-8
+StartupWMClass=chatgpt-nativefier
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;
