@@ -43,8 +43,9 @@ _build() {
       --name "${app_name}" \
       --icon "${app_name}.png" \
       --maximize \
-      --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0" \
+      --honest \
       "${url}"
+      # --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0" \
 }
 
 build() {
