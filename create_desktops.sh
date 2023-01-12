@@ -24,6 +24,7 @@ _app_list=(
     "reddit"
     "ai-core"
     "chatgpt"
+    "dictionary"
 )
 
 

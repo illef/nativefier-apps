@@ -20,6 +20,8 @@ source=(
     "reddit.png"
     "ai-core.png"
     "chatgpt.png"
+    "dictionary.png"
+    "dictionary-nativefier.desktop"
 )
 _app_list=(
     "keep;https://keep.google.com"
@@ -28,6 +30,7 @@ _app_list=(
     "reddit;https://www.reddit.com"
     "ai-core;https://github.com/orgs/classtinginc/projects/40/views/1"
     "chatgpt;https://chat.openai.com/chat"
+    "dictionary;https://www.google.com/search?q=google+dictionary"
 )
 
 
