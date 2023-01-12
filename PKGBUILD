@@ -12,14 +12,13 @@ source=(
     "meet-nativefier.desktop"
     "calendar-nativefier.desktop"
     "reddit-nativefier.desktop"
-    "data-board-nativefier.desktop"
-    "illef-nativefier.desktop"
+    "ai-core-nativefier.desktop"
     "chatgpt-nativefier.desktop"
     "keep.png"
     "meet.png"
     "calendar.png"
     "reddit.png"
-    "data-board.png"
+    "ai-core.png"
     "chatgpt.png"
 )
 _app_list=(
@@ -27,13 +26,10 @@ _app_list=(
     "meet;https://meet.google.com"
     "calendar;https://calendar.google.com"
     "reddit;https://www.reddit.com"
-    "data-board;https://github.com/orgs/classtinginc/projects/43/views/1?filterQuery=assignee%3Aillef"
+    "ai-core;https://github.com/orgs/classtinginc/projects/40/views/1"
     "chatgpt;https://chat.openai.com/chat"
 )
 
-_additional_desktops=(
-    "illef-nativefier.desktop"
-)
 
 _build() {
     app_name=$(echo "$1" | cut -d";" -f1)
@@ -78,9 +74,5 @@ _package() {
 package() {
     for app in "${_app_list[@]}"; do
         _package $app 
-    done
-
-    for desktop in "${_additional_desktops[@]}"; do
-        install -Dm644 "${srcdir}/${desktop}" "${pkgdir}/usr/share/applications/${desktop}"
     done
 }

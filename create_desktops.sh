@@ -22,7 +22,7 @@ _app_list=(
     "meet"
     "calendar"
     "reddit"
-    "data-board"
+    "ai-core"
     "chatgpt"
 )
 

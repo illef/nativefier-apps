@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=ai-core
+Comment=ai-core for desktop built with nativefier (electron)
+Exec=ai-core-nativefier
+Icon=ai-core-nativefier
+Encoding=UTF-8
+StartupWMClass=ai-core-nativefier
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;
