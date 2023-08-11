@@ -25,6 +25,7 @@ _app_list=(
     "ai-core"
     "chatgpt"
     "dictionary"
+    "feedly"
 )
 
 

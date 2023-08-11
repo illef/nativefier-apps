@@ -22,6 +22,8 @@ source=(
     "chatgpt.png"
     "dictionary.png"
     "dictionary-nativefier.desktop"
+    "feedly.png"
+    "feedly-nativefier.desktop"
 )
 _app_list=(
     "keep;https://keep.google.com"
@@ -31,6 +33,7 @@ _app_list=(
     "ai-core;https://github.com/orgs/classtinginc/projects/40/views/1"
     "chatgpt;https://chat.openai.com/chat"
     "dictionary;https://www.google.com/search?q=google+dictionary"
+    "feedly;https://feedly.com"
 )
 
 

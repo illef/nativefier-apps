@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=feedly
+Comment=feedly for desktop built with nativefier (electron)
+Exec=feedly-nativefier
+Icon=feedly-nativefier
+Encoding=UTF-8
+StartupWMClass=feedly-nativefier
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;
