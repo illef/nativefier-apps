@@ -4,56 +4,50 @@ pkgrel=1
 pkgdesc="illef apps built with nativefier (electron)"
 arch=("i686" "x86_64")
 license=("custom")
-depends=("gtk3" "libxss" "nss")
-optdepends=("libindicator-gtk3")
-makedepends=("imagemagick" "nodejs-nativefier" "unzip")
+depends=()
+optdepends=()
+makedepends=("unzip" "jq" "yarn")
 source=(
     "keep-nativefier.desktop"
-    "meet-nativefier.desktop"
     "calendar-nativefier.desktop"
     "reddit-nativefier.desktop"
     "ai-core-nativefier.desktop"
     "chatgpt-nativefier.desktop"
     "keep.png"
-    "meet.png"
     "calendar.png"
     "reddit.png"
-    "ai-core.png"
     "chatgpt.png"
-    "dictionary.png"
-    "dictionary-nativefier.desktop"
     "feedly.png"
     "feedly-nativefier.desktop"
+    "https://github.com/elibroftw/google-keep-desktop-app/archive/refs/tags/v1.0.18.zip"
 )
 _app_list=(
-    "keep;https://keep.google.com"
-    "meet;https://meet.google.com"
-    "calendar;https://calendar.google.com"
-    "reddit;https://www.reddit.com"
-    "ai-core;https://github.com/orgs/classtinginc/projects/40/views/1"
-    "chatgpt;https://chat.openai.com/chat"
-    "dictionary;https://www.google.com/search?q=google+dictionary"
-    "feedly;https://feedly.com"
+    "keep;https:\/\/keep.google.com"
+    "calendar;https:\/\/calendar.google.com"
+    "reddit;https:\/\/www.reddit.com"
+    "chatgpt;https:\/\/chat.openai.com\/chat"
+    "feedly;https:\/\/feedly.com"
 )
 
 
 _build() {
     app_name=$(echo "$1" | cut -d";" -f1)
     url=$(echo "$1" | cut -d";" -f2)
+    tauri_dir="${srcdir}/google-keep-desktop-app-1.0.18"
 
-    nativefier \
-      --name "${app_name}" \
-      --icon "${app_name}.png" \
-      --maximize \
-      --lang en-US \
-      --honest \
-      "${url}"
-      # --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0" \
+    cp ${app_name}.png $tauri_dir
+    echo "s/'.*'/'${url}'/" "$tauri_dir/src-tauri/src/main.rs"
+    sed -i "s/'.*'/'${url}'/" "$tauri_dir/src-tauri/src/main.rs"
+    ( 
+        cd ${tauri_dir} && yarn tauri icon ${app_name}.png && yarn tauri build --bundles none
+    )
+    cp ${tauri_dir}/src-tauri/target/release/google-keep ${srcdir}/${app_name}-nativefier
+
 }
 
 build() {
-    cd "${srcdir}"
 
+    ( cd ${srcdir}/google-keep-desktop-app-1.0.18/ && yarn )
     for app in "${_app_list[@]}"; do
         _build $app 
     done
@@ -62,13 +56,8 @@ build() {
 _package() {
     app_name=$(echo "$1" | cut -d";" -f1)
 
-    _folder=$(ls -l "${srcdir}" | grep "$app_name-linux-" | awk '{print $9}')
-    _binary=$(ls -l "${srcdir}/${_folder}" | grep "$app_name" | awk '{print $9}')
-
-    install -dm755 "${pkgdir}/"{opt,usr/{bin,share/{applications,licenses/${app_name}-nativefier}}}
-
-    cp -rL "${srcdir}/${_folder}" "${pkgdir}/opt/${app_name}-nativefier"
-    ln -s "/opt/${app_name}-nativefier/${_binary}" "${pkgdir}/usr/bin/${app_name}-nativefier"
+    mkdir -p "${pkgdir}/usr/bin"
+    cp ${srcdir}/${app_name}-nativefier "${pkgdir}/usr/bin/${app_name}-nativefier"
     install -Dm644 "${srcdir}/${app_name}-nativefier.desktop" "${pkgdir}/usr/share/applications/${app_name}-nativefier.desktop"
     for _size in "192x192" "128x128" "96x96" "64x64" "48x48" "32x32" "24x24" "22x22" "20x20" "16x16" "8x8"
     do
