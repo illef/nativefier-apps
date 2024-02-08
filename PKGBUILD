@@ -9,30 +9,21 @@ optdepends=("libindicator-gtk3")
 makedepends=("imagemagick" "nodejs-nativefier" "unzip")
 source=(
     "keep-nativefier.desktop"
-    "meet-nativefier.desktop"
     "calendar-nativefier.desktop"
     "reddit-nativefier.desktop"
-    "ai-core-nativefier.desktop"
     "chatgpt-nativefier.desktop"
+    "feedly-nativefier.desktop"
     "keep.png"
-    "meet.png"
     "calendar.png"
     "reddit.png"
-    "ai-core.png"
     "chatgpt.png"
-    "dictionary.png"
-    "dictionary-nativefier.desktop"
     "feedly.png"
-    "feedly-nativefier.desktop"
 )
 _app_list=(
     "keep;https://keep.google.com"
-    "meet;https://meet.google.com"
     "calendar;https://calendar.google.com"
     "reddit;https://www.reddit.com"
-    "ai-core;https://github.com/orgs/classtinginc/projects/40/views/1"
     "chatgpt;https://chat.openai.com/chat"
-    "dictionary;https://www.google.com/search?q=google+dictionary"
     "feedly;https://feedly.com"
 )
 
